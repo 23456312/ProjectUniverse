@@ -29,15 +29,17 @@ int main() {
   std::cout<<"\n";
     
 vector<int> Rank ={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82};
-    
+
+
   srand(time(NULL));
   string name;
   int age;
   string nationality;
   int initialRank;
+
+
   initialRank = rand() % Rank.size();
-
-
+ 
     
   std::cout<< "❥Enter your name:\n"; 
   cin>> name;
@@ -45,6 +47,8 @@ vector<int> Rank ={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2
   cin>> age;
   std::cout<<"❥Enter your nationality:\n";
   cin>> nationality;
+
+    Player p1{name, age, nationality, initialRank};
   
   std::cout<<"\n";
   std::cout<<"★・・・STATS・・・★\n";
@@ -73,9 +77,9 @@ for (int i =0; i < Contestants.size();i++){
     Rank.erase(Rank.begin()+ initialRank);
 }
 
-  Player p1{name, age, nationality, initialRank};
 
     if (p1.initialRank < 51){
+
         std::cout<<"\n";
         std::cout<< "✧Choose your opponent✧";
         std::cout<<"\n";
@@ -90,7 +94,14 @@ for (int i =0; i < Contestants.size();i++){
              }
          }
     }else if (p1.initialRank > 51){
-        cout << "You don't get to choose \n";
+        std::cout<<"\n";
+        cout << "Oh no! Due to your rank being in the low 50% you've been chosen by.. \n";
+        for (const auto& contestant : Contestants) {
+             if (contestant.initialRank < 51){
+
+                 
+             }
+        }
         //Player gets chosen by a ranom member of a higher rank
     }
 
