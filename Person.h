@@ -3,19 +3,8 @@ using namespace std;
 #ifndef PERSON_H
 #define PERSON_H
 
-class Person{
+class Person {
 public:
-  string name{};
-  int age{};
-  string nationality{};
-  Person();
-  Person(string n, int a, string na);
-  void elimination(){
-    cout << "You've been disqualified due to your preformance";
-  }
-  
-private:
-
   string getname() const;
   int getage() const;
   string getnationality() const;
@@ -23,7 +12,23 @@ private:
   void setname(string);
   void setage(int);
   void setnationality(string);
- 
+
+  string name{};
+  int age{};
+  string nationality{};
+  int initialRank{};
+  Person();
+  Person(string n, int a, string na, int rank) {
+    name = n;
+    age = a;
+    nationality = na;
+    initialRank = rank;
+  }
+  void elimination() { cout << "You've been eliminated"; }
+
+  void info() { cout << name << age << nationality << initialRank << endl; }
+
+private:
 };
 
 #endif
