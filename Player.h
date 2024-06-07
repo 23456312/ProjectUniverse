@@ -18,16 +18,19 @@ public:
     std::cout << "\n";
     std::cout << "★・・・STATS・・・★\n";
     std::cout << "● NAME ●\n ";
-    std::cout << "⟡ " << name << endl;
+    std::cout << "⟡ " << getName() << endl;
     std::cout << "○ AGE ○\n ";
-    std::cout << "⟡ " << age << endl;
+    std::cout << "⟡ " << getAge() << endl;
     std::cout << "● NATIONALITY ●\n ";
-    std::cout << "⟡ " << nationality << endl;
+    std::cout << "⟡ " << getNationality() << endl;
     std::cout << "○ INITIAL RANK ○\n ";
-    std::cout << "⟡ " << initialRank << endl;
+    std::cout << "⟡ " << getInitialRank() << endl;
     std::cout << "★・・・・・・・・・・★\n";
     cout << "\n";
   }
+
+  // Virtual Destuctor for every Derived class
+  virtual ~Player() {}
 
   // int getinitialRank() const;
   // void setinitialRank(int);

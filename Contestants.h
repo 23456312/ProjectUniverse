@@ -11,26 +11,30 @@ public:
 
   Contestants();
   Contestants(string n, int a, string na, vector<int> &RankList)
-      : Person(n, a, na, getInitialRank(RankList)) {
-    RankList[initialRank] = 1;
+      : Person(n, a, na, calculateInitialRank(RankList)) {
+    RankList[getInitialRank()] = 1;
   };
 
   void info() {
     std::cout << "\n";
-    cout << "☾ Name: " << name << ",\n ☾ Age: " << age
-         << ",\n ☾ Nationality: " << nationality
-         << ",\n ☾ Rank: " << initialRank << endl;
+    cout << "☾ Name: " << getName() << ",\n ☾ Age: " << getAge()
+         << ",\n ☾ Nationality: " << getNationality()
+         << ",\n ☾ Rank: " << getInitialRank() << endl;
 
     std::cout << "\n";
   }
 
   void elimination() {
-    cout << "You've been disqualified due to your preformance";
+    cout << "You've been disqualified due to your preformance " << getName()
+         << "\n";
   }
 
+  // Virtual Destuctor for every Derived class
+  virtual ~Contestants() {}
+
 private:
-  int getInitialRank(vector<int> &rankList) {
-    initialRank = rand() % rankList.size() - 1;
+  int calculateInitialRank(vector<int> &rankList) {
+    int initialRank = rand() % rankList.size();
     while (rankList[initialRank] == 1) {
       if (initialRank >= rankList.size()) {
         initialRank = 0;
@@ -40,8 +44,6 @@ private:
     }
     return initialRank;
   }
-  // int getinitialRank() const;
-  // void setinitialRank(int);
 };
 
 #endif

@@ -5,18 +5,16 @@ using namespace std;
 
 class Person {
 public:
-  string getname() const;
-  int getage() const;
-  string getnationality() const;
+  string getName() { return name; };
+  int getAge() { return age; };
+  string getNationality() { return nationality; };
+  int getInitialRank() { return initialRank; }
 
-  void setname(string);
-  void setage(int);
-  void setnationality(string);
+  void setName(string n) { name = n; }
+  void setAge(int a) { age = a; }
+  void setNationality(string n) { nationality = n; }
+  void setInitialRank(int rank) { initialRank = rank; }
 
-  string name{};
-  int age{};
-  string nationality{};
-  int initialRank{};
   Person();
   Person(string n, int a, string na, int rank) {
     name = n;
@@ -24,11 +22,19 @@ public:
     nationality = na;
     initialRank = rank;
   }
-  void elimination() { cout << "You've been eliminated"; }
 
-  void info() { cout << name << age << nationality << initialRank << endl; }
+  virtual void elimination() = 0;
+
+  virtual void info() = 0;
+
+  // usage of virtual Destuctor to avoid memory leak
+  virtual ~Person() {}
 
 private:
+  string name{};
+  int age{};
+  string nationality{};
+  int initialRank{};
 };
 
 #endif
