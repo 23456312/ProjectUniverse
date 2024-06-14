@@ -9,5 +9,9 @@ En esta simulación no solo afectará tu futuro, pero a las integrantes de tus e
 # Consideraciones
 Project Universe está elaborado para solo correr utilizando el lenguaje c++, por lo tanto pueden ocurrir errores si se utiliza otro lenguaje de programación. 
 
-Este lenguaje también utiliza varios archivos como el usode main.cpp, contestants.cpp, contestants.h, revengebattle.cpp, revengebattle.h, roadtoprism.cpp, roadtoprism.h, unitstation.cpp, unitstation.h, eliminated.cpp, eliminated.h. La utilización de ProjectUniverse sin alguno de estos archivos puede provocar que el archivo no funcione como se pretende. 
+Este lenguaje también utiliza varios archivos como el usode main.cpp, contestant.h, contest.h, NonPlayableCharacter.h, Person.h, Player.h, PrettyPrinter.h. La utilización de ProjectUniverse sin alguno de estos archivos puede provocar que el archivo no funcione como se pretende. 
+
+Otro caso en el cual se vea raro el programa es debido al uso de simbolos decorativos. Dichos simbolos no son presentes o "soportados" como es el caso de correrlo directo. Esto no afecta el codigo más que nada la apariencia. Debido a esto se grabo un video llamado "LINK DEL VIDEO" en el cual se demuestra el codigo con el uso de los simbolos y de sus funciones principales.
+
+Gracias
 
